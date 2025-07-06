@@ -1,0 +1,7 @@
+Langchain
+Langgraph
+Langchain_core
+Langchain_groq
+Langchain_openai
+faiss_cpu
+streamlit
