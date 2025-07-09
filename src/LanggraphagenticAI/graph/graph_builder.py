@@ -4,14 +4,12 @@ from langchain_core.prompts import ChatPromptTemplate
 import datetime
 
 from src.LanggraphagenticAI.nodes.BasicChatbotnode import BasicChatbotnode
-
-from src.LanggraphagenticAI.state import state
-
+from src.LanggraphagenticAI.state.state import State
 
 class Graph_Builder:
     def __init__(self,model):
         self.llm=model
-        self.graph_builder=StateGraph(state)
+        self.graph_builder=StateGraph(State)
 
     def basic_chatbot_buildgraph(self):
         """
@@ -30,7 +28,7 @@ class Graph_Builder:
         """
         Sets the graph based on the use case selection
         """
-        if usecase=="Basic chatbot":
+        if usecase=="Basic Chatbot":
             self.basic_chatbot_buildgraph()
 
 ###Compile the graph after the respective use case selection

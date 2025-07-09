@@ -2,7 +2,7 @@ import streamlit as st
 import json
 from src.LanggraphagenticAI.UI.streamlitUI.loadui import LoadStreamlitUI
 from src.LanggraphagenticAI.LLMs.GroqLLM import GroqLLM
-from src.LanggraphagenticAI.graph.graph_builder import GraphBuilder
+from src.LanggraphagenticAI.graph.graph_builder import Graph_Builder
 from src.LanggraphagenticAI.UI.streamlitUI.display_result import DisplayResultStreamlit
 
 # MAIN Function START
@@ -46,7 +46,7 @@ def load_langgraph_agenticai_app():
                     return
                 
                 ### Graph Builder
-                graph_builder=GraphBuilder(model)
+                graph_builder=Graph_Builder(model)
                 try:
                     graph = graph_builder.setup_graph(usecase)
                     DisplayResultStreamlit(usecase,graph,user_message).display_result_on_ui()
